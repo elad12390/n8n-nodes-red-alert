@@ -1,0 +1,43 @@
+{
+  "name": "Red Alert Emergency Response",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerMode": "newAlerts",
+        "checkInterval": 15,
+        "filterByLocation": true,
+        "locationFilter": "תל אביב, ירושלים",
+        "includeHistory": true,
+        "triggerOnClear": true,
+        "enhancedLocationData": true
+      },
+      "name": "Red Alert Trigger",
+      "type": "n8n-nodes-red-alert.redAlertTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "channel": "#emergency-alerts",
+        "text": "🚨 RED ALERT - ISRAEL 🚨\n\n**Alert ID:** {{$json.alert.id}}\n**Title:** {{$json.alert.title}}\n**Locations:** {{$json.alert.locations.join(', ')}}\n**Time:** {{$json.timestamp}}"
+      },
+      "name": "Send Slack Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [460, 300]
+    }
+  ],
+  "connections": {
+    "Red Alert Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+} 

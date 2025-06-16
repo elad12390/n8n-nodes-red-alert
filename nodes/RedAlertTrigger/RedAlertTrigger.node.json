@@ -1,0 +1,33 @@
+{
+  "node": "n8n-nodes-red-alert.redAlertTrigger",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": [
+    "Trigger"
+  ],
+  "resources": {
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/yourusername/n8n-nodes-red-alert#readme"
+      }
+    ],
+    "generic": [
+      {
+        "label": "Pikud Ha'Oref Official Website",
+        "icon": "🚨",
+        "url": "https://www.oref.org.il/"
+      },
+      {
+        "label": "Red Alert API Documentation",
+        "icon": "📖",
+        "url": "https://github.com/yourusername/n8n-nodes-red-alert/wiki"
+      }
+    ]
+  },
+  "alias": [
+    "Israeli Alerts",
+    "Missile Warning",
+    "Emergency Alert",
+    "Pikud Haoref"
+  ]
+} 
